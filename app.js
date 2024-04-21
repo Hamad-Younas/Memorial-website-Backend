@@ -22,16 +22,14 @@ console.log(typeof app); // Should log 'function'
 // Database connection
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
+    await mongoose.connect("mongodb+srv://admin:ndiRx3EwmrzEtAii@cluster1.ylbuwpb.mongodb.net/memorial-website");
     console.log('Connected to MongoDB.');
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
     process.exit(1);
   }
 };
+
 
 // Handle MongoDB disconnection event
 mongoose.connection.on('disconnected', () => {
